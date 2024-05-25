@@ -5,7 +5,7 @@ import google.generativeai as ggi
 st.title("Shopping Assistant")
 
 # Access the environment variable
-api_key = os.environ.get('FETCHEED_API_KEY')
+api_key = st.secrets['FETCHEED_API_KEY']
 print(api_key)
 
 if not api_key:
