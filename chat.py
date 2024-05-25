@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import google.generativeai as ggi
 
 st.title("Shopping Assistant")
@@ -9,7 +8,8 @@ api_key = st.secrets['FETCHEED_API_KEY']
 print(api_key)
 
 if not api_key:
-    st.error("API Key not found. Please set the FETCHEED_API_KEY environment variable.")
+    st.error(
+        "API Key not found. Please set the FETCHEED_API_KEY environment variable.")
 else:
     ggi.configure(api_key=api_key)
 
@@ -38,7 +38,8 @@ if prompt := st.chat_input("What is up?"):
 
         # Join all responses into a single string
         response_text = "\n".join(responses)
-        st.session_state.messages.append({"role": "assistant", "content": response_text})
+        st.session_state.messages.append(
+            {"role": "assistant", "content": response_text})
 
         # Display the response
         st.write(response_text)
