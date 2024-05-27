@@ -82,16 +82,16 @@ if user_picked == 'ChatBot':
             st.markdown(reponse.text)
 
 
-if user_picked == 'Image Captioning':
+if user_picked == 'Fit Check':
     model = gemini_vision()
 
-    st.title("🖼️Image Captioning")
+    st.title("Fit Check")
 
     image = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
     user_prompt = st.text_input("Enter the prompt for image captioning:")
 
-    if st.button("Generate Caption"):
+    if st.button("Generate Opinion"):
         load_image = Image.open(image)
 
         colLeft, colRight = st.columns(2)
